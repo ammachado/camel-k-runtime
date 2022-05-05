@@ -150,10 +150,9 @@ public final class SourcesSupport {
                                 "There should not be any template definition when configuring error handler, got " + templates.size());
                         }
 
-                        if (hasErrorHandlerBuilder(builder)) {
-                            LOGGER.debug("Setting default error handler builder factory as {}", builder.getErrorHandlerBuilder());
-                            runtime.getCamelContext().adapt(ExtendedCamelContext.class).setErrorHandlerFactory(builder.getErrorHandlerBuilder());
-                        }
+                        LOGGER.debug("Setting default error handler builder factory as {}", builder.getErrorHandlerFactory());
+                        runtime.getCamelContext().adapt(ExtendedCamelContext.class).setErrorHandlerFactory(builder.getErrorHandlerFactory());
+
                     }
                 });
                 break;
@@ -173,10 +172,6 @@ public final class SourcesSupport {
         } catch (Exception e) {
             throw RuntimeCamelException.wrapRuntimeCamelException(e);
         }
-    }
-
-    static boolean hasErrorHandlerBuilder(RouteBuilder builder) {
-        return builder.hasErrorHandlerBuilder();
     }
 
     public static void loadErrorHandlerSource(Runtime runtime, SourceDefinition errorHandlerSourceDefinition) {
