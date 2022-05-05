@@ -33,6 +33,7 @@ import org.apache.camel.RoutesBuilder;
 import org.apache.camel.main.BaseMainSupport;
 import org.apache.camel.main.MainListener;
 import org.apache.camel.main.RoutesCollector;
+import org.apache.camel.spi.Resource;
 
 public final class Application {
     private Application() {
@@ -148,6 +149,11 @@ public final class Application {
 
         @Override
         public List<RoutesBuilder> collectRoutesFromRegistry(CamelContext camelContext, String excludePattern, String includePattern) {
+            return Collections.emptyList();
+        }
+
+        @Override
+        public Collection<Resource> findRouteResourcesFromDirectory(CamelContext camelContext, String excludePattern, String includePattern) {
             return Collections.emptyList();
         }
     }
