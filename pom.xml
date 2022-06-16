@@ -41,8 +41,8 @@
         <camel-version>3.18.0-SNAPSHOT</camel-version>
 
         <!-- quarkus -->
-        <camel-quarkus-version>2.9.0-SNAPSHOT</camel-quarkus-version>
-        <quarkus-version>2.9.0.CR1</quarkus-version>
+        <camel-quarkus-version>2.10.0-SNAPSHOT</camel-quarkus-version>
+        <quarkus-version>2.10.0.CR1</quarkus-version>
         <quarkus-native-builder-image>quay.io/quarkus/ubi-quarkus-native-image:22.0.0-java11</quarkus-native-builder-image>
 
 
